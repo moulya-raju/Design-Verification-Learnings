@@ -137,7 +137,7 @@ The APB protocol operates in **3 states:**
 - T2: PENABLE asserted → **ACCESS phase begins**
 - T3: Transfer completes, PENABLE deasserted
 
-![Write Without Wait States](docs/images/APB Write Transfer - Without Wait States.png)
+![Write Without Wait States](docs/images/apb_write_wow.png)
 
 ---
 
@@ -145,14 +145,14 @@ The APB protocol operates in **3 states:**
 - PREADY=LOW during ACCESS → slave inserts wait states
 - All signals must remain **stable** while PREADY=LOW
 
-![Write With Wait States](docs/images/APB Write Transfer - With Wait States.png)
+![Write With Wait States](docs/images/apb_write_ww.png)
 
 ---
 
 ### Read Transfer — Without Wait States:
 - Slave must provide PRDATA **before end of ACCESS phase** (T3)
 
-![Read Without Wait States](docs/images/APB Read Transfer - Without Wait States.png)
+![Read Without Wait States](docs/images/apb_read_wow.png)
 
 ---
 
@@ -160,7 +160,7 @@ The APB protocol operates in **3 states:**
 - PREADY=LOW → slave not ready, transfer extended
 - PRDATA must be valid when PREADY finally goes HIGH
 
-![Read With Wait States](docs/images/APB Read Transfer - With Wait States.png)
+![Read With Wait States](docs/images/apb_read_ww.png)
 
 ---
 
@@ -168,13 +168,13 @@ The APB protocol operates in **3 states:**
 - `PSLVERR` is only valid when `PSELx=1`, `PENABLE=1`, `PREADY=1`
 - In this project: `PSLVERR=1` when `PADDR >= 32` (out of bounds)
 
-![Error Response Read](docs/images/APB Error Response for a Read Transfer.png)
+![Error Response Read](docs/images/apb_read_error.png)
 
 ---
 
 ### Error Response — Write:
 
-![Error Response Write](docs/images/APB Error Response for a Write Transfer.png)
+![Error Response Write](docs/images/apb_write_error.png)
 
 ---
 
