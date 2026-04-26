@@ -1,3 +1,10 @@
+# ============================================================
+# QuestaSim Run Script - APB UVM Project
+# Usage:
+#   vsim -do run.do        (GUI mode - with waveforms)
+#   vsim -c -do run.do     (batch mode - no waveforms)
+# ============================================================
+
 # Step 1: Clean previous work library
 if {[file exists work]} {
     vdel -lib work -all
@@ -27,7 +34,33 @@ vsim -t 1ns \
      +UVM_VERBOSITY=UVM_LOW \
      -sv_seed random
 
-# Step 8: Run
+# Step 8: Add waveforms
+add wave -divider "CLOCK AND RESET"
+add wave -color cyan       sim:/tb_top/pclk
+add wave -color red        sim:/tb_top/vif/presetn
+
+add wave -divider "APB CONTROL SIGNALS"
+add wave -color yellow     sim:/tb_top/vif/psel
+add wave -color yellow     sim:/tb_top/vif/penable
+add wave -color yellow     sim:/tb_top/vif/pwrite
+
+add wave -divider "APB ADDRESS AND DATA"
+add wave -color white -hex sim:/tb_top/vif/paddr
+add wave -color white -hex sim:/tb_top/vif/pwdata
+add wave -color white -hex sim:/tb_top/vif/prdata
+
+add wave -divider "APB RESPONSE SIGNALS"
+add wave -color green      sim:/tb_top/vif/pready
+add wave -color red        sim:/tb_top/vif/pslverr
+
+add wave -divider "DUT FSM STATE"
+add wave -color orange     sim:/tb_top/dut/state
+
+# Step 9: Configure waveform window
+wave zoom full
+
+# Step 10: Run simulation
 run -all
 
-quit -sim
+# Step 11: Zoom to fit all waves after simulation
+wave zoom full

@@ -88,7 +88,7 @@ AMBA
 
 | Signal    | Direction | Width |           Description                                  |
 |-----------|-----------|-------|--------------------------------------------------------|
-| `PCLK` | Input        | 1     | System clock — all transitions on rising edge          |
+| `PCLK`    | Input     | 1     | System clock — all transitions on rising edge          |
 | `PRESETn` | Input     | 1     | Active Low asynchronous reset                          |
 | `PSELx`   | Input     | 1     | Slave select — asserted by master to select this slave |
 | `PENABLE` | Input     | 1     | Indicates ACCESS phase — second cycle of transfer		 |
@@ -338,6 +338,23 @@ apb_design.sv → interface.sv → package.sv → tb_top.sv
 > **Note:** RTL code coverage is measured on `apb_design.sv` only. TB files are excluded — code coverage is a RTL metric, not a TB metric.
 
 ---
+
+## Simulation Results — Waveforms
+
+### Main Test (apb_test) — Coverage Focused:
+![APB Base Test](docs/images/apb_base_test.png)
+
+### Write Test (apb_write_test) — All 32 Addresses Written:
+![APB Write Test](docs/images/apb_write_test.png)
+
+### Read Test (apb_read_test) — Write then Read All Addresses:
+![APB Read Test](docs/images/apb_read_test.png)
+
+### Error Test (apb_error_test) — Out of Bounds → PSLVERR:
+![APB Error Test](docs/images/apb_error_test.png)
+
+### Stress Test (apb_stress_test) — 50000 Random Transactions:
+![APB Stress Test](docs/images/apb_stress_test.png)
 
 ## How to Run
 
