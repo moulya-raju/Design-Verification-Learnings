@@ -1,0 +1,61 @@
+###############################################################
+ # This report contains names of design units along with parameter
+ # values and self instances.
+ # Some parameters may have more than one possible values for that
+ # design unit, values will be unique for instances. It is indicated as
+ # "Multiple Values".
+ # In some cases instance count shown may be less than actual instance
+ # count in the design due to optimizations. It is indicated as
+ # "Optimized".
+###############################################################
+
+
+Design Unit Name: 'seq_top', (/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/_snps_seq_top.sv:1)
+    Parameters (Total 0)
+    Instances (Total: 0)
+=============================================
+
+
+Design Unit Name: 'SPEC.edge_detection', (../RTL/edge_detector.sv:1)
+    Parameters (Total 0)
+    Instances (Total 1)
+        seq_top.spec
+=============================================
+
+
+Design Unit Name: 'IMPL.edge_detection_netlist', (../RTL/edge_detection_gls.sv:8)
+    Parameters (Total 0)
+    Instances (Total 1)
+        seq_top.impl
+=============================================
+
+
+Design Unit Name: 'DFFPOSX1', (../RTL/osu05_stdcells.v:273)
+    Parameters (Total 0)
+    Instances (Total 1)(Optimized)
+        seq_top.impl.q_reg
+=============================================
+
+
+Design Unit Name: 'NOR2X1', (../RTL/osu05_stdcells.v:674)
+    Parameters (Total 0)
+    Instances (Total 2)(Optimized)
+        seq_top.impl.U7
+        seq_top.impl.U9
+=============================================
+
+
+Design Unit Name: 'AND2X1', (../RTL/osu05_stdcells.v:3)
+    Parameters (Total 0)
+    Instances (Total 1)(Optimized)
+        seq_top.impl.U8
+=============================================
+
+
+Design Unit Name: 'INVX1', (../RTL/osu05_stdcells.v:458)
+    Parameters (Total 0)
+    Instances (Total 1)(Optimized)
+        seq_top.impl.U10
+=============================================
+
+

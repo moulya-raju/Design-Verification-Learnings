@@ -1,0 +1,119 @@
+                                   VC Static 
+              Version V-2023.12-SP2-3 for linux64 - Oct 12, 2024
+                    Copyright (c) 2010 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+#source -echo /u/moulya/FV/Edge_Detection/formal_veif/run.tcl
+# ============================================================
+# VC Formal Sequential Equivalence Checking Script
+# ============================================================
+set_fml_appmode SEQ
+# ------------------------------------------------------------
+# Read Standard Cell Library
+# ------------------------------------------------------------
+read_file ../RTL/osu05_stdcells.v
+[Warning] TOP_NOT_SPECIFIED: Top module is not specified, hence design will be only analyzed, not elaborated.
+# ------------------------------------------------------------
+# Read RTL (spec) and GLS (impl)
+# ------------------------------------------------------------
+analyze -format sverilog -library spec ../RTL/edge_detector.sv
+analyze -format sverilog -library impl ../RTL/edge_detection_gls.sv
+# ------------------------------------------------------------
+# Elaborate Designs
+# ------------------------------------------------------------
+elaborate_seq -spectop edge_detection -impltop edge_detection_netlist
+[Warning] COM_OPT009: 'search_path' has not been set.
+[Warning] COM_OPT010: 'link_library' has not been set.
+Doing common elaboration 
+Info: Invoking Simon...
+Info: Simon VCS Start
+Warning-[SM_IGN_SPECIFY] Ignoring Specify block
+../RTL/osu05_stdcells.v, 283
+  Specify block is ignored for synthesis
+Warning-[SM_IGN_SPECIFY] Ignoring Specify block
+../RTL/osu05_stdcells.v, 682
+  Specify block is ignored for synthesis
+Warning-[SM_IGN_SPECIFY] Ignoring Specify block
+../RTL/osu05_stdcells.v, 10
+  Specify block is ignored for synthesis
+Warning-[SM_IGN_SPECIFY] Ignoring Specify block
+../RTL/osu05_stdcells.v, 464
+  Specify block is ignored for synthesis
+=======================================================
+VCS CPU Time(s)     :0.57
+SIMON CPU Time(s)   :0.25
+SIMON Total Time(s) :0.14
+Peak Memory(MB)     :435
+=======================================================
+Info: Simon VCS Finished
+Info: Simon call complete 
+Info: Exiting after Simon Analysis 
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+# Gate Counts 
+Number of Flat Instances = 29
+Number of Operator = 29
+Number of Libcells = 0
+Number of Black-Box Instances = 0
+Number of FlipFlop BitWise = 2
+Number of Latch Bitwise = 0
+Number of Nand BitWise = 0
+Number of Comb logic = 29
+# ------------------------------------------------------------
+# Map by name
+# ------------------------------------------------------------
+map_by_name
+[Info] MAPPING_ENABLED: input, output, blackbox, CMA, undriven, abstraction.
+[Info] MBN_SUMMARY: '3' primary inputs are mapped as assumes.
+[Info] MBN_SUMMARY: '2' primary outputs are mapped as asserts.
+[Info] MBN_SUMMARY: '0' blackbox inputs are mapped as asserts.
+[Info] MBN_SUMMARY: '0' blackbox outputs are mapped as assumes.
+[Info] MBN_SUMMARY: '0' CMA inputs are mapped as asserts.
+[Info] MBN_SUMMARY: '0' CMA outputs are mapped as assumes.
+[Info] MBN_SUMMARY: '0' abstraction inputs are mapped as asserts.
+[Info] MBN_SUMMARY: '0' abstraction outputs are mapped as assumes.
+[Info] MBN_SUMMARY: '0' undriven nets are mapped as assumes.
+# ------------------------------------------------------------
+# Clock and Reset
+# ------------------------------------------------------------
+create_clock -period 100 spec.clk
+create_reset spec.rst -sense high
+# ------------------------------------------------------------
+# Run reset simulation
+# ------------------------------------------------------------
+sim_run -stable
+[Info] ENVCNSTR_I_INSTR: Instrument Environment Constraints.
+	Constraints are applied to all checks from this point and will be applied across all user tasks.
+[Info] SIM_I_CREATE: Create Simulation Model.
+sim_save_reset
+#mapping unintialized registors using SEQ config
+seq_config -map_uninit -map_x zero
+[Info] SEQ_CONFIG_SUMMARY: Specprefix: spec, Implprefix: impl.
+	Mappings: (Uninit: 1, X: zero, Counters: 0), Recipe: default, Infer Unresolved Ports: ON.
+# ------------------------------------------------------------
+# Run Formal Check
+# ------------------------------------------------------------
+check_fv
+[Info] MAP_UNINIT: The tool mapped 0 pair(s) of uninitialized registers.
+[Info] REGISTER_MAP_BY_NAME: '0' registers are mapped by name between the two designs.
+	'2' registers are not mapped between the two designs due to different name/reset state.
+[Info] FORMAL_I_CREATE: Create Formal Model:seq_top.
+[Info] FORMAL_I_RUN: Starting formal verification for check_fv
+	  Id: 0  Goals: 2  Constraints: 3  Block Mode: false
+[Info] LIC_UNUSED_WORKERS: 8 unused worker(s) based 1 licenses needed to support 4 workers requested.
+	Use 'set_grid_usage' to maximize worker usage and improve performance, if there are sufficient compute resources to support more workers.
+	Each runtime license supports 12 workers.
+[Info] LIC_RT_CHECKOUT: VC Formal run time license checkout. Base:1  SEQ:1.
+[Info] RETRIEVE_LEARN_DATA: Retrieved learned data from (local directory) seq_top_learn_dir.
+1
+[Info] TW_INFO_MSG: Starting rewrite (rw1_1) command at 2026-04-30::04:00:31.

@@ -1,0 +1,8 @@
+DEFAULT.seq_top#/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/_snps_seq_top.sv
+SPEC.edge_detection#../RTL/edge_detector.sv
+IMPL.edge_detection_netlist#../RTL/edge_detection_gls.sv
+DEFAULT.DFFPOSX1#../RTL/osu05_stdcells.v
+DEFAULT.NOR2X1#../RTL/osu05_stdcells.v
+DEFAULT.AND2X1#../RTL/osu05_stdcells.v
+DEFAULT.INVX1#../RTL/osu05_stdcells.v
+seq_config_cfg1

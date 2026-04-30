@@ -1,0 +1,3 @@
+{ +warn=noTFIPC;
+  +file=/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/_snps_seq_top.sv;
+}

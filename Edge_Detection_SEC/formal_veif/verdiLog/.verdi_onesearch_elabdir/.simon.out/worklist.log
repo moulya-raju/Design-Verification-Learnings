@@ -1,0 +1,8 @@
+0::udp_dff::0
+1::z_impl_edge_detection_netlist_::0
+2::z_spec_edge_detection_::0
+3::DFFPOSX1::0
+4::NOR2X1::0
+5::AND2X1::0
+6::INVX1::0
+7::seq_top::0

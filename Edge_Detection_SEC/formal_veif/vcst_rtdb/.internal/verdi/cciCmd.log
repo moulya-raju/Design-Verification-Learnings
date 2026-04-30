@@ -1,0 +1,19 @@
+03:59:53 : gui:mo.ece.pdx.edu:34904
+03:59:53 : ___vcstRenameMan
+03:59:56 : ___vcDumpDefMsgColor
+03:59:56 : ___vcChangeMsgColor msg_color_warn magenta
+03:59:56 : ___vcChangeMsgColor msg_color_info black
+04:00:16 : source -echo /u/moulya/FV/Edge_Detection/formal_veif/run.tcl
+04:00:31 : get_snips -verdi
+04:00:32 : ___vcDisplayAbstractSrcFromAutoBBox
+04:00:32 : get_blackbox -designs -verdi
+04:00:32 : get_glassbox -verdi
+04:00:32 : get_snips -verdi
+04:00:32 : ___fvWaitAnnotation
+04:00:32 : ___fvSetReuseWave
+04:00:32 : action aaVerdiRestoreClipboard -trigger
+04:00:33 : ___vcstCommandLog {#action aaMonetSwitchTable -table Targets+Constraints -trigger}
+04:00:33 : ___fvSyncSignoffCovParam {action aaMonetSyncSignoffCovParam -effortIndex 0 -trigger}
+04:00:33 : ___fvSavePropDBToStream
+04:00:33 : ___fvReportConstant {/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/verdi/constant.xml}
+04:00:34 : ___fvReportGridUsage /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/verdi/gridUsage.xml0

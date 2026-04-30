@@ -1,0 +1,27 @@
+-- DesignWare map file
+dware: /pkgs/synopsys/current/vc_static/packages/DW/linux64/packages/dware/lib
+gtech: /pkgs/synopsys/current/vc_static/packages/DW/linux64/packages/dw/gtech/lib
+dw01: /pkgs/synopsys/current/vc_static/packages/DW/linux64/packages/dw/dw01/lib
+dw02: /pkgs/synopsys/current/vc_static/packages/DW/linux64/packages/dw/dw02/lib
+dw03: /pkgs/synopsys/current/vc_static/packages/DW/linux64/packages/dw/dw03/lib
+dw04: /pkgs/synopsys/current/vc_static/packages/DW/linux64/packages/dw/dw04/lib
+dw05: /pkgs/synopsys/current/vc_static/packages/DW/linux64/packages/dw/dw05/lib
+dw06: /pkgs/synopsys/current/vc_static/packages/DW/linux64/packages/dw/dw06/lib
+
+
+-- default WORK mapping
+WORK > DEFAULT
+TIMEBASE = PS
+
+DISAMBIG_CONCAT=TRUE
+
+OVERWRITE_PREDECLARATION_IN_LIB=TRUE
+
+DEFAULT : /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/worklib
+
+-- user specified
+SPEC : /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/spec
+
+-- user specified
+IMPL : /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/impl
+

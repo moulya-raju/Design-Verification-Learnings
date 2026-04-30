@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<File version="1">
+	<State>
+		<Pair vector="1'b0" name="spec.q" />
+		<Pair vector="1'b0" name="impl.q_reg.udp$1.out" />
+		<Pair vector="1'b1" name="_BM_CLKGEN_.CSR0_2" />
+	</State>
+	<Input>
+		<Pair vector="1'bx" name="_BME.impl.d" />
+		<Pair vector="1'b1" name="_BME.$reset" />
+		<Pair vector="1'b1" name="_atZero" />
+		<Pair vector="1'bx" name="impl.q_reg.NOTIFIER" />
+		<Pair vector="1'bx" name="impl.clk" />
+		<Pair vector="1'bx" name="impl.d" />
+		<Pair vector="1'bx" name="impl.rst" />
+		<Pair vector="1'bx" name="spec.clk" />
+		<Pair vector="1'bx" name="spec.d" />
+		<Pair vector="1'bx" name="spec.rst" />
+	</Input>
+</File>

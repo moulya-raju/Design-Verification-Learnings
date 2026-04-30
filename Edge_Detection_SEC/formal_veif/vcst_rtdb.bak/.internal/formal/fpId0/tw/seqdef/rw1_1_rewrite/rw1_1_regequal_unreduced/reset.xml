@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<GlResetState>
+	<v1>
+		<values>
+			<ResetValue>
+				<id>_BM_CLKGEN_.CSR0_2</id>
+				<vector>1'b1</vector>
+			</ResetValue>
+			<ResetValue>
+				<id>spec.q</id>
+				<vector>1'b0</vector>
+			</ResetValue>
+			<ResetValue>
+				<id>impl.q_reg.udp$1.out</id>
+				<vector>1'b0</vector>
+			</ResetValue>
+		</values>
+	</v1>
+</GlResetState>

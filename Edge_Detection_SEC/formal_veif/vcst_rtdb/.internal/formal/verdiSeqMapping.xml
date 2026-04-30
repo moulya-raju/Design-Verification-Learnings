@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<SeqMapping>
+	<Delimiter>.</Delimiter>
+	<Top>seq_top</Top>
+	<Specprefix>spec</Specprefix>
+	<Implprefix>impl</Implprefix>
+	<ExtraMappings />
+	<Exceptions />
+</SeqMapping>

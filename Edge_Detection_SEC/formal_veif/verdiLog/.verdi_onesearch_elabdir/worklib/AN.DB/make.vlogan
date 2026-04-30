@@ -1,0 +1,17 @@
+
+VLOGAN	= vlogan
+VLOGAN_OPT	= -kdb=common_elab -kdb=incopt -sverilog -skip_translate_body +define+SYNTHESIS -q -timescale=1ns/1ns -full64 -full64
+
+all :		_VCSgd_iSf6Jd_1.db \
+	_VCSgd_705LCd_1.db \
+
+
+
+_VCSgd_iSf6Jd_1.db :	/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/_snps_seq_top.sv 
+		${VLOGAN}  ${VLOGAN_OPT} /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/_snps_seq_top.sv
+
+
+_VCSgd_705LCd_1.db :	../RTL/osu05_stdcells.v 
+		${VLOGAN}  ${VLOGAN_OPT} ../RTL/osu05_stdcells.v
+
+

@@ -1,0 +1,12 @@
+
+VLOGAN	= vlogan
+VLOGAN_OPT	= -kdb=common_elab -kdb=incopt -sverilog -skip_translate_body +define+SYNTHESIS -q -timescale=1ns/1ns -full64 -work spec -full64
+
+all :		_VCSgd_fbXDDc_1.db \
+
+
+
+_VCSgd_fbXDDc_1.db :	../RTL/edge_detector.sv 
+		${VLOGAN}  ${VLOGAN_OPT} ../RTL/edge_detector.sv
+
+

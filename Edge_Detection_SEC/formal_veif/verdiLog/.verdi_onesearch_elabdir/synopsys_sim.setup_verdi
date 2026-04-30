@@ -1,0 +1,14 @@
+-- default WORK mapping
+WORK > DEFAULT
+TIMEBASE = PS
+
+DISAMBIG_CONCAT=TRUE
+
+OVERWRITE_PREDECLARATION_IN_LIB=TRUE
+
+-- user specified
+SPEC : /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/spec_verdi
+
+-- user specified
+IMPL : /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/impl_verdi
+

@@ -1,0 +1,3 @@
+Command Line: /pkgs/synopsys/current/vc_static/vcs-mx/linux64/bin/elabcom -simflow -KDBRESOLVER -simvdaidir /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/seq_top.exe.daidir -logdir /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/verdi/elabcomLog -Xprefer_tech_lib -saveLevel -ssy -ssv -ssz -silent +disable_message+C00373 -partialdesign -q -logdir /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/seq_top.exe.daidir/kdbresolverLog
+uname(Linux mo.ece.pdx.edu 3.10.0-1160.119.1.el7.x86_64 #1 SMP Tue Jun 4 14:43:51 UTC 2024 x86_64)
+au time 0.562653 0.042051 0.156434 delta 18382848 18382848 total 284266496 284266496

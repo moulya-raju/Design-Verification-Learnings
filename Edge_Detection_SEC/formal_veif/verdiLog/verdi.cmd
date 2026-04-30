@@ -1,0 +1,45 @@
+verdiSetActWin -dock widgetDock_<Message>
+verdiWindowWorkMode -win $_Verdi_1 -formalVerification
+verdiDockWidgetDisplay -dock windowDock_vcstConsole_2
+srcSetPreference -vcstOpts {-demo -prompt vcf -fmode _default -new_verdi_comm}
+verdiSetActWin -win $_vcstConsole_2
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+verdiSetActWin -dock widgetDock_VCF:GoalList
+verdiVcstOpenTclPrjFile -file /u/moulya/FV/Edge_Detection/formal_veif/run.tcl
+schSetVCSTDelimiter -VHDLGenDelim "."
+schUnifiedNetList
+schSetVCSTDelimiter -hierDelim "."
+srcSetXpropOption "tmerge"
+wvSetPreference -overwrite off
+wvSetPreference -getAllSignal off
+simSetSimulator "-vcssv" -exec \
+           "/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/seq_top.exe" \
+           -args
+debImport "-simflow" "-smart_load_kdb" "-dbdir" \
+          "/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/seq_top.exe.daidir"
+srcSetPreference -tabNum 16
+verdiSeqDebug -xml \
+           "/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/formal/verdiSeqMapping.xml"
+verdiSeqDebug -xml \
+           "/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/formal/verdiSeqMapping.xml"
+verdiSeqDebug -xml \
+           "/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/formal/verdiSeqMapping.xml"
+schSetPreference -displayAbstractSrc on
+debLoadUserDefinedFile \
+           /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/verdi/constant.uddb
+srcSetOptions -userAnnot on -win $_nTrace1 -field 2
+opVerdiComponents -xmlstr \
+           "<Command delimiter=\"/\" name=\"schSession\">
+<HighlightObjs clear=\"true\"/>
+</Command>
+"
+opVerdiComponents -xmlstr \
+           "<Command delimiter=\"/\" name=\"schSession\">
+<HighlightObjs>
+<H_Nets>
+<H_Net name=\"seq_top/spec/rst\" text=\"C:0\" color=\"2\"/>
+</H_Nets>
+</HighlightObjs>
+</Command>
+"
+debExit

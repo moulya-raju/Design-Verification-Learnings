@@ -1,0 +1,5 @@
+
+Warning-[SM_IGN_SPECIFY] Ignoring Specify block
+../RTL/osu05_stdcells.v, 283
+  Specify block is ignored for synthesis
+

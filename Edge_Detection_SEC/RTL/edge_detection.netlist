@@ -1,0 +1,19 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : Q-2019.12-SP3
+// Date      : Wed Apr 29 14:01:50 2026
+/////////////////////////////////////////////////////////////
+
+
+module edge_detection_netlist ( clk, rst, d, pos_edge, neg_edge );
+  input clk, rst, d;
+  output pos_edge, neg_edge;
+  wire   q, N3, n2;
+
+  DFFPOSX1 q_reg ( .D(N3), .CLK(clk), .Q(q) );
+  NOR2X1 U7 ( .A(q), .B(n2), .Y(pos_edge) );
+  AND2X1 U8 ( .A(n2), .B(q), .Y(neg_edge) );
+  NOR2X1 U9 ( .A(rst), .B(n2), .Y(N3) );
+  INVX1 U10 ( .A(d), .Y(n2) );
+endmodule
+

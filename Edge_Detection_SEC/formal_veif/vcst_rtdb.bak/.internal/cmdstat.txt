@@ -1,0 +1,128 @@
+
+
+### action	Num_calls 5	Total_time 0.055524	Total_CpuTime 0.01	Total malloc-M 0
+1	Shell:	Time:0.042206	CpuTime:0.00	 Malloc-MB:0
+2	Shell:	Time:0.009451	CpuTime:0.01	 Malloc-MB:0
+3	Shell:	Time:0.001896	CpuTime:0.00	 Malloc-MB:0
+4	Shell:	Time:0.001083	CpuTime:0.00	 Malloc-MB:0
+
+### analyze	Num_calls 2	Total_time 2.10174	Total_CpuTime 0.61	Total malloc-M 0
+1	File:/u/moulya/FV/Edge_Detection/formal_veif/run.tcl::15	Time:1.07279	CpuTime:0.30	 Malloc-MB:0
+2	File:/u/moulya/FV/Edge_Detection/formal_veif/run.tcl::16	Time:1.02895	CpuTime:0.31	 Malloc-MB:0
+
+### check_fv	Num_calls 1	Total_time 0.880653	Total_CpuTime 0.12	Total malloc-M 0
+1	File:/u/moulya/FV/Edge_Detection/formal_veif/run.tcl::49	Time:0.880653	CpuTime:0.12	 Malloc-MB:0
+
+### configure_tag	Num_calls 1	Total_time 0.095385	Total_CpuTime 0.09	Total malloc-M 5
+1	File:/pkgs/synopsys/current/vc_static/auxx/monet/tcl/merge_commands.tcl::0	Time:0.095385	CpuTime:0.09	 Malloc-MB:5
+
+### create_clock	Num_calls 1	Total_time 0.059935	Total_CpuTime 0.05	Total malloc-M 0
+1	File:/u/moulya/FV/Edge_Detection/formal_veif/run.tcl::31	Time:0.059935	CpuTime:0.05	 Malloc-MB:0
+
+### create_proc_command	Num_calls 244	Total_time 0.063699	Total_CpuTime 0.06	Total malloc-M 1
+1	File:/pkgs/synopsys/current/vc_static/auxx/monet/tcl/merge_commands.tcl::0	Time:0.001256	CpuTime:0.00	 Malloc-MB:0
+2	File:/pkgs/synopsys/current/vc_static/auxx/monet/tcl/fv_command_consistency_fca.tcl::0	Time:0.001117	CpuTime:0.00	 Malloc-MB:0
+
+### create_reset	Num_calls 1	Total_time 0.003216	Total_CpuTime 0.01	Total malloc-M 0
+1	File:/u/moulya/FV/Edge_Detection/formal_veif/run.tcl::32	Time:0.003216	CpuTime:0.01	 Malloc-MB:0
+
+### elaborate_seq	Num_calls 1	Total_time 8.32432	Total_CpuTime 2.83	Total malloc-M 31
+1	File:/u/moulya/FV/Edge_Detection/formal_veif/run.tcl::21	Time:8.32432	CpuTime:2.83	 Malloc-MB:31
+
+### fv_app	Num_calls 1	Total_time 0.000274	Total_CpuTime 0	Total malloc-M 0
+
+### fv_update_command_consistency_flow	Num_calls 1	Total_time 0.003437	Total_CpuTime 0	Total malloc-M 0
+1	File:/pkgs/synopsys/current/vc_static/auxx/monet/tcl/fv_command_consistency_helper.tcl::0	Time:0.003437	CpuTime:0.00	 Malloc-MB:0
+
+### fv_var_report	Num_calls 1	Total_time 0.000199	Total_CpuTime 0	Total malloc-M 0
+
+### get_blackbox	Num_calls 1	Total_time 0.000645	Total_CpuTime 0	Total malloc-M 0
+
+### get_glassbox	Num_calls 1	Total_time 0.000516	Total_CpuTime 0	Total malloc-M 0
+
+### get_message_db_ptr	Num_calls 1	Total_time 3.4e-05	Total_CpuTime 0	Total malloc-M 0
+
+### get_report_db_ptr	Num_calls 1	Total_time 3.2e-05	Total_CpuTime 0	Total malloc-M 0
+
+### get_snips	Num_calls 2	Total_time 0.001162	Total_CpuTime 0	Total malloc-M 0
+
+### gui_log_cmd	Num_calls 1	Total_time 0.000504	Total_CpuTime 0	Total malloc-M 0
+
+### map_by_name	Num_calls 1	Total_time 0.162564	Total_CpuTime 0.04	Total malloc-M 0
+1	File:/u/moulya/FV/Edge_Detection/formal_veif/run.tcl::26	Time:0.162564	CpuTime:0.04	 Malloc-MB:0
+
+### proc_cmd_command_consistency_check	Num_calls 1	Total_time 0.00039	Total_CpuTime 0	Total malloc-M 0
+
+### read_file	Num_calls 1	Total_time 1.65381	Total_CpuTime 0.68	Total malloc-M -1
+1	File:/u/moulya/FV/Edge_Detection/formal_veif/run.tcl::10	Time:1.65381	CpuTime:0.68	 Malloc-MB:-1
+
+### report_constant	Num_calls 1	Total_time 0.000673	Total_CpuTime 0	Total malloc-M 0
+
+### report_grid_usage	Num_calls 1	Total_time 0.000533	Total_CpuTime 0	Total malloc-M 0
+
+### report_vcst_var	Num_calls 1	Total_time 0.009137	Total_CpuTime 0.01	Total malloc-M 0
+1	Shell:	Time:0.009137	CpuTime:0.01	 Malloc-MB:0
+
+### restore_session	Num_calls 1	Total_time 0.000387	Total_CpuTime 0	Total malloc-M 0
+
+### seq_config	Num_calls 1	Total_time 0.009384	Total_CpuTime 0	Total malloc-M 0
+1	File:/u/moulya/FV/Edge_Detection/formal_veif/run.tcl::44	Time:0.009384	CpuTime:0.00	 Malloc-MB:0
+
+### sim_run	Num_calls 1	Total_time 0.153082	Total_CpuTime 0.02	Total malloc-M 13
+1	File:/u/moulya/FV/Edge_Detection/formal_veif/run.tcl::37	Time:0.153082	CpuTime:0.02	 Malloc-MB:13
+
+### sim_save_reset	Num_calls 1	Total_time 0.117	Total_CpuTime 0.01	Total malloc-M -11
+1	File:/u/moulya/FV/Edge_Detection/formal_veif/run.tcl::38	Time:0.117	CpuTime:0.01	 Malloc-MB:-11
+
+### verdi_cmd	Num_calls 3	Total_time 1.14398	Total_CpuTime 0.01	Total malloc-M 0
+1	Shell:	Time:0.685838	CpuTime:0.01	 Malloc-MB:0
+2	Shell:	Time:0.446166	CpuTime:0.00	 Malloc-MB:0
+3	Shell:	Time:0.011973	CpuTime:0.00	 Malloc-MB:0
+
+ ****************************Shell commands Recording************************
+___fvReportGridUsage /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/verdi/gridUsage.xml0
+
+
+ ****************************ThreadTask Recording************************
+Thread: CommonMgr Time: 0(s) Mem: 0(KB) MaxSize: 0
+Thread: ReportDb Time: 0.278288(s) Mem: 20056(KB) MaxSize: 8
+Thread: watchdog Time: 0.000542879(s) Mem: 0(KB) MaxSize: 1
+
+
+ ****************************ProcessTask Recording************************
+
+ Task : VCS Analyzer Task
+ args: sh,-c,$VCS_HOME/bin/vlogan  -kdb=common_elab /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/undef_vcs.v -Xvd_opts=-silent,+disable_message+C00373,-ssy,-ssv,-ssz -file /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/analyzeCmd1 -kdb=incopt  -Xufe=parallel:incrdump  -full64  -libfile_opt 
+ file: /u/moulya/FV/Edge_Detection/formal_veif/run.tcl line: 10
+ Start Time: 18.1623, 1.81
+ End Time: 19.5061, 2.19
+
+ Task : VCS Analyzer Task
+ args: sh,-c,$VCS_HOME/bin/vlogan  -kdb=common_elab /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/undef_vcs.v -Xvd_opts=-silent,+disable_message+C00373,-ssy,-ssv,-ssz -file /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/analyzeCmd2 -kdb=incopt  -Xufe=parallel:incrdump  -full64  -libfile_opt 
+ file: /u/moulya/FV/Edge_Detection/formal_veif/run.tcl line: 15
+ Start Time: 19.6734, 2.31
+ End Time: 20.7023, 2.61
+
+ Task : VCS Analyzer Task
+ args: sh,-c,$VCS_HOME/bin/vlogan  -kdb=common_elab /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/undef_vcs.v -Xvd_opts=-silent,+disable_message+C00373,-ssy,-ssv,-ssz -file /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/analyzeCmd3 -kdb=incopt  -Xufe=parallel:incrdump  -full64  -libfile_opt 
+ file: /u/moulya/FV/Edge_Detection/formal_veif/run.tcl line: 16
+ Start Time: 20.7544, 2.61
+ End Time: 21.7314, 2.92
+
+ Task : VCS Analyzer Task
+ args: sh,-c,$VCS_HOME/bin/vlogan  -kdb=common_elab /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/undef_vcs.v -Xvd_opts=-silent,+disable_message+C00373,-ssy,-ssv,-ssz -file /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/analyzeCmd4 -kdb=incopt  -Xufe=parallel:incrdump  -full64  -libfile_opt 
+ file: /u/moulya/FV/Edge_Detection/formal_veif/run.tcl line: 21
+ Start Time: 21.7679, 2.92
+ End Time: 22.7791, 3.21
+
+ Task : VCS Elaborater Task
+ args: sh,-c,$VCS_HOME/bin/vcs -file /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/elaborateCmd -Xvcstatic_extns=0x4  -Xvcstatic_extns=0x1000  -Xvcstatic_extns=0x100  +warn=noSM_CCE  -units  -error=IRRIPS  -kdb=common_elab  -Xufe=parallel:incrdump  -kdb=incopt  +warn=noKDB-ELAB-E  -Xverdi_elab_opts=-saveLevel  -verdi_opts "-logdir /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/verdi/elabcomLog " -Xvd_opts=,-ssy,-ssv,-ssz,-silent,+disable_message+C00373, -full64 
+ file: /u/moulya/FV/Edge_Detection/formal_veif/run.tcl line: 21
+ Start Time: 22.8613, 3.23
+ End Time: 30.0459, 5.75
+
+ Task : TW_0
+ args: seeq1,-log,/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/formal/fpId0/tw/tw.log.gz,-interactive,-workDir,/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/formal/fpId0/tw,-worker,4,-encryptLogs,-gz_logfile,-script,/pkgs/synopsys/current/vc_static/auxx/monet/tcl/seq_vsi_init.tcl,-exec,mpRunGenericTclMaster,-time,12
+ file: /u/moulya/FV/Edge_Detection/formal_veif/run.tcl line: 49
+ Start Time: 31.3859, 5.98
+ End Time: 42.1723, 7.03

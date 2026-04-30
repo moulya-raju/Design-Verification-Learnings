@@ -1,0 +1,24 @@
+BEGIN_VIOLATION
+RULE_NAME:SM_IGN_SPECIFY
+FILE_NAME:../RTL/osu05_stdcells.v
+LINE_NUMBER:682
+VCS_SEVERITY:Warning
+MESSAGE:  Specify block is ignored for synthesis
+END_VIOLATION
+
+BEGIN_VIOLATION
+RULE_NAME:SM_IGN_SPECIFY
+FILE_NAME:../RTL/osu05_stdcells.v
+LINE_NUMBER:10
+VCS_SEVERITY:Warning
+MESSAGE:  Specify block is ignored for synthesis
+END_VIOLATION
+
+BEGIN_VIOLATION
+RULE_NAME:SM_IGN_SPECIFY
+FILE_NAME:../RTL/osu05_stdcells.v
+LINE_NUMBER:464
+VCS_SEVERITY:Warning
+MESSAGE:  Specify block is ignored for synthesis
+END_VIOLATION
+

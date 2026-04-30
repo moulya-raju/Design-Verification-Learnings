@@ -1,0 +1,61 @@
+<SVI>
+<SVI_SIMON>
+  <option data="full_hier"/>
+  <option data="vcstaticStabilityMode"/>
+  <option data="circWriteFile=/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/seq_top.scm"/>
+  <option data="outputWorkDir=/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design"/>
+  <option data="vsiLogDir=/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/logs"/>
+  <option data="noRemoveConstants"/>
+  <option data="2valued"/>
+  <option data="preserveSigs"/>
+  <option data="trackLocations"/>
+  <option data="oneDeep"/>
+  <option data="wholeSignalsInSupport"/>
+  <option data="directIfFull"/>
+  <option data="designAttribute"/>
+  <option data="markRawSigs"/>
+  <option data="noRemoveWriteOnlyLocalsInUnnamedBlocks"/>
+  <option data="nxgAutoGlassBox"/>
+  <option data="exitPostAnalysis"/>
+  <option data="preserveStructWriteInsideLoop=1"/>
+  <option data="deleteSva"/>
+  <option data="useOrigVhdlGenBracket"/>
+  <option data="highLevelForm=0"/>
+  <option data="ndmerge"/>
+  <option data="inferComplexSyncControls"/>
+  <option data="enablePortConnectAttr"/>
+  <option data="noSkipSimMemModels"/>
+  <option data="contFeedBackToLatch"/>
+  <option data="dumpQualifiedName=1"/>
+  <option data="genPrimHierarchy=2"/>
+  <option data="populateDriveStrength"/>
+  <option data="useDot"/>
+  <option data="treatInitialBlockAsNonSynth=0"/>
+  <option data="top=seq_top"/>
+  <option data="addInputResolution"/>
+  <option data="disableAEPs"/>
+  <option data="dumpVsiLib"/>
+  <option data="generateDontCares"/>
+  <option data="q"/>
+  <option data="buildTop=1"/>
+  <option data="j=4"/>
+  <option data="alwaysGenLogicForPartialCombCell"/>
+  <option data="inferPrimGateForUDP"/>
+  <option data="memLatchLimit=16"/>
+  <option data="doControlIdentify=1"/>
+  <option data="numWallSeconds=3000"/>
+  <option data="ignoreCoverage"/>
+  <option data="fastScmRead"/>
+  <option data="preserveDBZ"/>
+  <option data="preserveCaseEq=2"/>
+  <option data="loadBasicDbViews"/>
+</SVI_SIMON>
+<SVI_VCS>
+  <option data="hsc=."/>
+  <option data="elab_summary_report_max_inst=5"/>
+  <option data="elab_summary_sam_file=/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/reports/elab_summary_sam.rpt"/>
+  <option data="in_design_file=/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/inDesign.rpt"/>
+  <option data="top=seq_top"/>
+  <option data="portCoercionsLog=/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/port_coercions.rpt"/>
+</SVI_VCS>
+</SVI>

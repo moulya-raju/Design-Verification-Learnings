@@ -1,0 +1,273 @@
+>>>verdiVcstSetSviPid -pid 21196
+<<< Success : 
+>>>verdiVcstResizeTopWin
+<<< Success : 
+>>>verdiVcstGetVerdiFont
+>>>@@@Event: verdiFontEvent(DejaVu Sans,11)
+>>>@@@Event: verdiMonoFontEvent(DejaVu Sans Mono,11)
+<<< Success : 
+>>>verdiDockWidgetSetCurTab -dock windowDock_vcstConsole_2
+<<< Success : 1
+>>>::vcst::creatInstAction
+<<< Success : 
+>>>::vcst::createAnalyzerAction
+<<< Success : 
+>>>::vcst::creatResetLayoutAction
+<<< Success : 
+>>>::vcst::creatAssertAnalyzerAction
+<<< Success : 
+>>>set ::vcst::EnableUDWin 0
+<<< Success : 0
+>>>qwConfig -type nWave -cmds [list {qwAddToolBarGroup -group "UDWinGroup"} {qwAddToolBarGroup -group "AssertAnalyzer"}]
+<<< Success : 
+>>>srcSetOptions -lockActView on
+<<< Success : 1
+>>>::vcst::createAddTraceToWaveAction
+<<< Success : 
+>>>source /pkgs/synopsys/current/vc_static/auxx/monet/tcl/menu.tcl
+
+<<< Success : 1
+>>>verdiWindowPrependTitle -win $_nTrace1 -preTitle {}
+<<< Success : 0
+>>>set ::vcst::_compositeTrace {1}
+<<< Success : 1
+>>>verdiVcstSyncMsgColor -errorColor "default_red" -warningColor "default_none" -infoColor "default_none"
+>>>@@@Event: vcstMsgColorChange(warningColor magenta true)
+>>>@@@Event: vcstMsgColorChange(infoColor black true)
+<<< Success : 
+>>>verdiVcstOnPropSelectionChanged -strNum 0 -propList {}
+<<< Success : 
+>>>verdiDockWidgetSetCurTab -dock widgetDock_VCF:GoalList
+<<< Success : 1
+>>>@@@Event: swnTraceWindowType(-win "nTrace")
+>>>@@@Event: swnTraceWindowType(-win "nTrace")
+>>>@@@Event: swnTraceWindowType(-win "nTrace")
+>>>verdiVcstOpenTclPrjFile
+>>>@@@Event: guiXMap(-xid 0x3400d41)
+>>>@@@Event: swnTraceWindowType(-win "nTrace")
+>>>@@@Event: swnTraceWindowType(-win "nTrace")
+>>>@@@Event: swnTraceWindowType(-win "nTrace")
+>>>@@@Event: guiXUnmap(-xid 0x3400d7c)
+>>>@@@Event: verdiRunVcstCmd(source -echo /u/moulya/FV/Edge_Detection/formal_veif/run.tcl)
+>>>verdiGetVcstCmdResult -xmlstr {<Command name="source" received="1"></Command>}
+
+<<< Success : 1
+<<< Success : 1
+>>>verdiVcstOnPropSelectionChanged -strNum 0 -propList {}
+<<< Success : 
+>>>verdiVcstSetAppmode -mode SEQ -fromVcst
+<<< Success : 
+>>>::vcst::changeLayout FPV SEQ
+<<< Success : 1
+>>>verdiVcstCheckFv -active -taskName SEQ
+<<< Success : 
+>>>set ::vcst::_fml_max_proof_depth {-1};set ::vcst::_fml_max_time {12H};catch {verdiVcstOnFmlVarChanged -key {fml_effort} -value {default}}
+<<< Success : 0
+>>>@@@Event: swnTraceWindowType(-win "nTrace")
+>>>verdiVcstDesignLoaded
+<<< Success : 
+>>>verdiVcstDesignLoaded
+<<< Success : 
+>>>verdiVcstDesignLoaded
+<<< Success : 
+>>>verdiDockWidgetSetCurTab -dock widgetDock_VCF:TaskList
+<<< Success : 1
+>>>verdiVcstSetAppmode -mode SEQ -fromVcst
+<<< Success : 
+>>>verdiVcstChangeGoalListTabName -tabName VCF:GoalList
+<<< Success : 
+>>>verdiAboutDlg -banner {
+VC Static
+
+Version V-2023.12-SP2-3 for linux64 - Oct 12, 2024
+
+Copyright (c) 2010 - 2024 Synopsys, Inc.
+}
+<<< Success : 1
+>>>verdiSetStatusMsg -win Verdi_1 -color red { Design import... cross probing not ready }
+<<< Success : 1
+>>>set ::vcst::_top "seq_top"
+set ::vcst::_v2kConfig "seq_config_cfg1:config"
+set ::vcst::_elab ""
+set ::vcst::_elabOpts {}
+set ::vcst::_rtdbDir {/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb}
+set ::vcst::_hiddenDir {.internal}
+set ::vcst::_masterMode true
+set ::vcst::_workLib ""
+set ::vcst::_upfOpts " -upf "
+set ::vcst::_enableKdb "true"
+set ::vcst::_simBinPath "seq_top.exe"
+set ::vcst::_goldenUpfConfig {}
+set ::vcst::_nldmNschema {false}
+set ::vcst::_kdbAlias {false}
+set ::vcst::_covDut {}
+set ::vcst::_splitbus {false}
+set ::vcst::_enableVerdiLog {1}
+set ::vcst::_fml_max_proof_depth {-1}
+set ::vcst::_smartLoad {true}
+set ::vcst::_compositeTrace {1}
+set ::vcst::_strategyFilePath {}
+set ::vcst::_enableVnrWriteKdb {false}
+set ::vcst::_bIsFormalFlow {true}
+set ::vcst::_bGlobalFsdbPresent {false}
+set ::vcst::_sRunModes {}
+set ::vcst::_enableVnrWriteKdbResolve {true}
+set ::vcst::_disableSymbolLibraryImportMessage {false}
+set ::vcst::_enableKdbRemoval {false}
+set ::vcst::_diucFlow {false}
+set ::vcst::_libArgs ""
+set ::vcst::_seqXmlFile ""
+schSetVCSTDelimiter -VHDLGenDelim "."
+schUnifiedNetList -skipKdb
+schSetPreference -turboLibs {} -turboLibPaths {}
+verdiSetPrefEnv -bSpecifyWindowTitleForDockContainer off
+paSetPreference -brightenPowerColor on
+schSetPreference -showPassThroughNet on
+paSetPreference -AnnotateSignal off
+paSetPreference -highlightPowerObject off
+srcAssertSetOpt -addSigToWave 0 -addSigWithExpGrp 1 -maskWave 0 -ShowCycleInfo 1
+srcBlockFilelocateDlg on
+verdiRunVcst -on
+schSetVCSTDelimiter -hierDelim .
+set ::vcst::_vcstAppHierDelim "."
+srcSetXpropOption "tmerge"
+set ::vcst::_powerDbDir ""
+set ::vcst::_bRestore ""
+verdiDockWidgetFix -dock widgetDock_VCF:GoalList
+::vcst::loadMainWin "0"
+verdiDockWidgetUnfix -dock widgetDock_VCF:GoalList
+
+srcBlockFilelocateDlg off
+
+setStyleFvProgress -css {font-family:DejaVu Sans monospace;font-size:11px}
+setStyleFvGoalProgress -css {font-family:DejaVu Sans monospace;font-size:11px}
+verdiSetFont -font "DejaVu Sans" -size "11"
+verdiSetPrefEnv -monoFontSize "11"
+verdiVcstEnableAppMode -enable FRV
+
+verdiRunVcstCmd "___fvWaitAnnotation
+" -no_wait
+verdiRunVcstCmd "___fvSetReuseWave
+" -no_wait
+>>>@@@Event: vcstSyncCmd(wvSetPreference -overwrite off)
+>>>@@@Event: vcstSyncCmd(wvSetPreference -getAllSignal off)
+>>>@@@Event: srcImportDesign(seq_top)
+>>>verdiSetStatusMsg -win Verdi_1 -color black { Design import ready }
+<<< Success : 1
+>>>@@@Event: srcChangeScope(seq_top)
+>>>@@@Event: srcHBTreeSelect({ 1 {seq_top} false})
+>>>@@@Event: srcHBTreeSelect({ 1 {seq_top} false})
+>>>@@@Event: srcGetSnipSignal(srcGetSnipSignal)
+>>>@@@Event: srcGetBlackbox(srcGetBlackbox)
+>>>@@@Event: verdiRunVcstCmd(___fvWaitAnnotation
+ -no_wait)
+>>>verdiGetVcstCmdResult -xmlstr {<Command name="___fvWaitAnnotation
+" received="1"></Command>}
+
+<<< Success : 1
+>>>@@@Event: verdiRunVcstCmd(___fvSetReuseWave
+ -no_wait)
+>>>verdiGetVcstCmdResult -xmlstr {<Command name="___fvSetReuseWave
+" received="1"></Command>}
+
+<<< Success : 1
+<<< Success : 1
+>>>srcSetPreference -tabNum 16
+>>>@@@Event: vcstSyncCmd(srcSetPreference -tabNum 16)
+<<< Success : 1
+>>>verdiSetPrefEnv -bDockNewWindowInContainerWhenFindSameType "off"
+<<< Success : 1
+>>>set ::vcst::_bRestore ""
+<<< Success : 
+>>>verdiLayoutFreeze -off
+<<< Success : 1
+>>>verdiToolBar -rm toolbarFusaExclMenu
+<<< Success : 1
+>>>verdiToolBar -rm toolbarHB_TOGGLE_PANEL toolbarHB_EMULATION_PANEL toolbarHB_PRODTYPE_PANEL UVM_AWARE_DEBUG AMS_CONFIG_TOOLBAR NOVAS_TBBR_INTERACTIVEVIEW_PANEL NOVAS_TBBR_DEBUG_REWIND_COMMAND NOVAS_TBBR_DEBUG_REWIND_UNDO_REDO_COMMAND NOVAS_TBBR_DEBUG_REVERSE_COMMAND NOVAS_TBBR_DEBUG_VSIM_COMMAND NOVAS_EMULATION_DEBUG_COMMAND CVG_CER_PANEL NOVAS_TBBR_DEBUG_COMMAND
+<<< Success : 1
+>>>verdiRunVcstCmd "action aaVerdiRestoreClipboard -trigger
+" -no_wait
+>>>@@@Event: verdiRunVcstCmd(action aaVerdiRestoreClipboard -trigger
+ -no_wait)
+>>>verdiGetVcstCmdResult -xmlstr {<Command name="action" received="1"></Command>}
+
+<<< Success : 1
+>>>verdiGetVcstCmdResult -xmlstr {<Command name="action" status="1"></Command>}
+
+<<< Success : 1
+<<< Success : 1
+>>>syncSignoffCovParamFromRcFile
+>>>@@@Event: verdiRunVcstCmd(___fvSyncSignoffCovParam {action aaMonetSyncSignoffCovParam -effortIndex 0 -trigger} -no_wait)
+>>>verdiGetVcstCmdResult -xmlstr {<Command name="___fvSyncSignoffCovParam" received="1"></Command>}
+
+<<< Success : 1
+<<< Success : 1
+>>>verdiSetRCValue -section appSetting -key verdiFirstMode -value 1
+<<< Success : 
+>>>verdiSetRCValue -section appSetting -key vcstVersion -value V-2023.12-SP2-3
+<<< Success : 
+>>>verdiSetSeqDebug -xml {/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/formal/verdiSeqMapping.xml}
+>>>@@@Event: srcChangeScope(seq_top.impl)
+>>>@@@Event: srcHBTreeSelect({ 1 {seq_top.impl} false})
+<<< Success : 1
+>>>verdiVcstDesignLoaded
+<<< Success : 
+>>>verdiGetVcstCmdResult -xmlstr {<Command name="sim_run" status="1" />}
+<<< Success : 1
+>>>verdiGetVcstCmdResult -xmlstr {<Command name="sim_save_reset" status="1" />}
+<<< Success : 1
+>>>report_fv_complexity -silent -sim_save_reset
+<<< Success : 1
+>>>verdiSetSeqDebug -xml {/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/formal/verdiSeqMapping.xml}
+<<< Success : 1
+>>>verdiVcstCheckFv -taskName SEQ
+>>>@@@Event: vcstReportFvProgress(gridUsage.xml gridUsage null)
+<<< Success : 1
+>>>vcstRunCovCmd -async gui_vcst_set_parameters -is_running true
+<<< Success : 0
+>>>verdiSetSeqDebug -xml {/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/formal/verdiSeqMapping.xml}
+<<< Success : 1
+>>>verdiGetVcstCmdResult -xmlstr {<Command name="check_fv" status="1" />}
+<<< Success : 1
+>>>verdiLayoutFreeze -off
+<<< Success : 1
+>>>::vcst::showDebugViews -1 false false setupSource
+<<< Success : 1
+>>>verdiWindowMoveDockTab -win Verdi_1 widgetDock_VCF:Shell widgetDock_VCF:GoalList widgetDock_<Message>
+verdiDockWidgetSetCurTab -dock widgetDock_VCF:GoalList
+
+<<< Success : 1
+>>>verdiVcstChangeGoalListTabName -tabName VCF:GoalList
+<<< Success : 
+>>>verdiVcstChangeGoalListTabName -tabName VCF:GoalList(SEQ)
+<<< Success : 
+>>>verdiSetRCValue -section appSetting -key glbfilter -value {111}
+<<< Success : 
+>>>schSetPreference -displayAbstractSrc on 
+<<< Success : 1
+>>>srcSetBlackbox   -delim {.}
+<<< Success : 0
+>>>srcSetGlassbox  -delim {.}
+<<< Success : 0
+>>>verdiGetRCValue -section appSetting -key reuseWave 
+<<< Success : 
+>>>verdiVcstChangeGoalListTabName -tabName VCF:GoalList
+<<< Success : 
+>>>verdiVcstChangeGoalListTabName -tabName VCF:GoalList(SEQ)
+<<< Success : 
+>>>verdiSetRCValue -section appSetting -key glbfilter -value {111}
+<<< Success : 
+>>>verdiSetRCValue -section appSetting -key conSize -value {PROPERTY_CLASS,100:PROPERTY_CLOCK,100:PROPERTY_EXPRESSION,100:PROPERTY_ID,100:PROPERTY_INSTANCE,100:PROPERTY_LANGUAGE,100:PROPERTY_LOCATION,100:PROPERTY_NAME,100:PROPERTY_SCOPE,100:PROPERTY_SIGNALS,100:PROPERTY_SVA_TYPE,100:PROPERTY_TYPE,100:PROPERTY_USAGE,100:PROPERTY_VACUITY,100:PROPERTY_WITNESS,100:};
+<<< Success : 
+>>>verdiVcstChangeGoalListTabName -tabName VCF:GoalList
+<<< Success : 
+>>>verdiVcstChangeGoalListTabName -tabName VCF:GoalList(SEQ)
+<<< Success : 
+>>>verdiSetRCValue -section appSetting -key glbfilter -value {111}
+<<< Success : 
+>>>verdiVcstConstantReport -xmlFile /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/verdi/constant.xml 
+<<< Success : 1
+>>>receiveFvProgress /u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/verdi/gridUsage.xml0
+<<< Success : 1
+>>>verdiVcstCheckFv -taskName SEQ
+<<< Success : 

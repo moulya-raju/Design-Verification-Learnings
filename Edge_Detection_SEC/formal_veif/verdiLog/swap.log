@@ -1,0 +1,45 @@
+version: (200506)
+
+available memory: 64M bytes
+used memory: 212992 bytes [need 208K bytes if disable swap]
+
+used block: 5 [memory(5) file(0)]
+                 [ 8K(2) 64K(3) { total 208K bytes } ]
+overhead: (9514) bytes for (5) blocks [Average: (1902) bytes/block]
+
+write  => 0(times) 0K(bytes) [0K bytes to file]
+read   => 3(times) 6K(bytes) [1K bytes compressed data from file]
+access => 93714(times) 734M(bytes)
+          [hit ratio: 99.9968%]
+
+time: write(0) read(0)  unit: second
+
+swap file directory: (/u/moulya/FV/Edge_Detection/formal_veif/verdiLog)
+used swap file number: (4)
+
+
+
+swap file manager:
+arrSize: (256)
+idxCnt: (5)
+closeHead: (1)
+closeTail: (4)
+openCnt: (4)
+fid(4): fd(1073741826) fileName(/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/seq_top.exe.daidir/kdb.elab++/spec.lib++/edge_detector.sv.tdc)
+	size(941) lastModTime(1777546819) curModTime(1777546819)
+	mode(rb)	hot(0) cool(3) pos(0)
+fid(3): fd(1073741825) fileName(/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/seq_top.exe.daidir/kdb.elab++/impl.lib++/edge_detection_gls.sv.tdc)
+	size(1266) lastModTime(1777546820) curModTime(1777546820)
+	mode(rb)	hot(4) cool(2) pos(0)
+fid(2): fd(69) fileName(/u/moulya/FV/Edge_Detection/formal_veif/verdiLog/_swap_0001#567686121#20996)
+	size(0) lastModTime(0) curModTime(1777546830)
+	mode(w+b)	hot(3) cool(1) pos(0)
+fid(1): fd(1073741824) fileName(/u/moulya/FV/Edge_Detection/formal_veif/vcst_rtdb/.internal/design/seq_top.exe.daidir/kdb.elab++/work.lib++/_snps_seq_top.sv.tdc)
+	size(1059) lastModTime(1777546821) curModTime(1777546821)
+	mode(rb)	hot(2) cool(0) pos(0)
+fid(0): fd(0) fileName(NULL)
+	mode(NULL)	hot(0) cool(0) pos(0)
+==================================================
+mySelf(0x23c6a750) pre(0x23c64160) next((nil))
+version(200506)
+date(Sep 25 2024 02:45:52)
