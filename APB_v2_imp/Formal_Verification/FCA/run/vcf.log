@@ -1,0 +1,248 @@
+
+                                   VC Static 
+
+              Version V-2023.12-SP2-3 for linux64 - Oct 12, 2024 
+
+                    Copyright (c) 2010 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+restore_session -level default
+
+source -echo /u/moulya/LEARNINGS/APB_v2_imp/Formal_Verification/FCA/run/run.tcl
+#============================================================
+# VC Formal FCA / COV TCL Script for APB RAM
+#============================================================
+set_fml_appmode COV
+set design apb_ram
+read_file -top $design -format sverilog -sva -vcs {
+  /u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv
+} -cov all
+[Info] COV_I_NO_DB_AUTO_OPT_OFF: No coverage database is imported.
+	Hence coverage options cannot be automatically extracted by the tool. So please make sure to specify the relevant coverage options with the read_file/elaborate command.
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS Release Notes
+
+Info: Invoking New SVA Compiler Instrument...
+Info: SVAC-NC Start
+Info: SVAC-NC Finished
+Info: Invoking Pre SV Covergroup Cov Instrument...
+
+Info: Pre SV Covergroup Cov Start
+
+No Covergroup found.
+
+Info: Pre SV Covergroup Cov Finished
+VCS Coverage Metrics Release V-2023.12-SP2-3_Full64 Copyright (c) 1991-2023 by Synopsys Inc.
+Info: Invoking Pre Vlog Line Cov Instrument...
+Info: Invoking Pre Vlog Cond Cov Instrument...
+Info: Invoking Pre Vlog Tgl Cov Instrument...
+
+Warning-[VC_NO_TGL_INPUT] No Toggle for input ports
+  Toggle coverage for input ports wouldn't be monitored.
+  If you want to monitor toggle coverage for input ports then kindly enable 
+  using the app var fml_cov_tgl_input_port
+
+Info: Invoking Vlog Cov Instrument...
+Info: Vlog Coverage Extraction Start
+Info: Vlog Coverage Extraction Finished
+Info: Invoking Simon...
+Info: Simon VCS Start
+=======================================================
+VCS CPU Time(s)     :0.47
+SIMON CPU Time(s)   :0.06
+SIMON Total Time(s) :0.09
+Peak Memory(MB)     :420
+=======================================================
+Info: Simon VCS Finished
+Info: Simon call complete 
+Info: Exiting after Simon Analysis 
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)
+[Info] DB_COPT045: Vcs analyzer task has finished.
+[Info] PROP_I_COLLECT: Collecting Source Properties from the view:apb_ram.
+[Info] PROP_I_COLLECT: Collecting Source Properties from the view:apb_ram.
+# Gate Counts 
+Number of Flat Instances = 2430
+Number of Operator = 2430
+Number of Libcells = 0
+Number of Black-Box Instances = 0
+Number of FlipFlop BitWise = 1138
+Number of Latch Bitwise = 0
+Number of Nand BitWise = 3
+Number of Comb logic = 231
+
+create_clock pclk -period 100
+create_reset presetn -sense low
+sim_run -stable
+[Info] SIM_I_CREATE: Create Simulation Model.
+sim_save_reset
+# Run coverage analysis
+check_fv
+[Info] FORMAL_I_CREATE: Create Formal Model:apb_ram.
+[Warning] POTENTIAL_SETUP_ISSUES: There are potential setup issues. Please run check_fv_setup to confirm.
+	  Reset: 1  Clock: 0  Glitch: 0  Osc_loop: 0  Osc_seq: 0
+[Info] FORMAL_I_RUN: Starting formal verification for check_fv
+	  Id: 0  Goals: 84  Constraints: 0  Block Mode: false
+[Info] FML_AUTO_CHKPNT_INIT: Activating auto checkpointing ...
+[Info] AUTO_SAVE_ON: Automatic checkpointing is turned on. Set app var fml_auto_save to 'false' to disable it.
+[Info] LIC_UNUSED_WORKERS: 8 unused worker(s) based 1 licenses needed to support 4 workers requested.
+	Use 'set_grid_usage' to maximize worker usage and improve performance, if there are sufficient compute resources to support more workers.
+	Each runtime license supports 12 workers.
+[Info] LIC_RT_CHECKOUT: VC Formal run time license checkout. Base:1  COV:1.
+[Info] TRACE_GENERATION_OFF: Trace generation is turned off. Set fml_cov_gen_trace to 'on' to enable it.
+[Info] FML_AUTO_CHKPNT_ACT: Automatic checkpointing has been activated.
+
+action aaVerdiRestoreClipboard -trigger
+#action aaMonetSwitchTable -table Targets+Constraints -trigger
+[Info] BITLEVEL_MODEL_STATS: Generated model with 10689 gates, 99 inputs, 1173 registers, 0 initial constraints, 0 constraints.
+report_fv -list
+
+  Summary Results
+   Property Summary: COV
+   -----------------
+   > Constraint
+     - # found        : 1
+
+   Coverage Summary: COV
+   -----------------
+   > Line Coverage
+     - # found        : 9
+     - # covered      : 7
+     - # uncoverable  : 2
+
+   > Condition Coverage
+     - # found        : 3
+     - # covered      : 3
+
+   > Toggle Coverage
+     - # found        : 72
+     - # covered      : 70
+     - # uncoverable  : 2
+
+
+  List Results
+   Property List:
+   --------------
+   > Constraint
+     # Constraint: 1
+     [  84] constrained                             -  constant_84 - presetn==1
+
+   Coverage List:
+   --------------
+   > Line Coverage
+     # Line Coverage: 9
+     [   3] covered     (depth=1)                   -  apb_ram.line_0 (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:43)
+     [   4] uncoverable                             -  apb_ram.line_1 (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:44)
+     [   5] uncoverable                             -  apb_ram.line_2 (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:48)
+     [   6] covered     (depth=1)                   -  apb_ram.line_3 (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:52)
+     [   7] covered     (depth=1)                   -  apb_ram.line_4 (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:57)
+     [   8] covered     (depth=1)                   -  apb_ram.line_5 (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:58)
+     [   9] covered     (depth=1)                   -  apb_ram.line_6 (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:61)
+     [  10] covered     (depth=1)                   -  apb_ram.line_7 (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:64)
+     [  11] covered     (depth=1)                   -  apb_ram.line_8 (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:69)
+
+   > Condition Coverage
+     # Condition Coverage: 3
+     [   0] covered     (depth=0)                   -  apb_ram.condition_0 (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:31)
+     [   1] covered     (depth=0)                   -  apb_ram.condition_1 (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:31)
+     [   2] covered     (depth=0)                   -  apb_ram.condition_2 (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:31)
+
+   > Toggle Coverage
+     # Toggle Coverage: 72
+     [  12] covered     (depth=0)                   -  apb_ram.toggle_apb_access_0 [apb_access 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:28)
+     [  13] covered     (depth=0)                   -  apb_ram.toggle_apb_access_1 [apb_access 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:28)
+     [  14] covered     (depth=2)                   -  apb_ram.toggle_prdata_10 [prdata[13] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  15] covered     (depth=3)                   -  apb_ram.toggle_prdata_11 [prdata[13] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  16] covered     (depth=2)                   -  apb_ram.toggle_prdata_12 [prdata[14] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  17] covered     (depth=3)                   -  apb_ram.toggle_prdata_13 [prdata[14] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  18] covered     (depth=2)                   -  apb_ram.toggle_prdata_14 [prdata[15] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  19] covered     (depth=3)                   -  apb_ram.toggle_prdata_15 [prdata[15] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  20] covered     (depth=2)                   -  apb_ram.toggle_prdata_16 [prdata[16] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  21] covered     (depth=3)                   -  apb_ram.toggle_prdata_17 [prdata[16] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  22] covered     (depth=2)                   -  apb_ram.toggle_prdata_18 [prdata[17] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  23] covered     (depth=3)                   -  apb_ram.toggle_prdata_19 [prdata[17] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  24] covered     (depth=2)                   -  apb_ram.toggle_prdata_2 [prdata[0] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  25] covered     (depth=2)                   -  apb_ram.toggle_prdata_20 [prdata[18] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  26] covered     (depth=3)                   -  apb_ram.toggle_prdata_21 [prdata[18] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  27] covered     (depth=2)                   -  apb_ram.toggle_prdata_22 [prdata[19] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  28] covered     (depth=3)                   -  apb_ram.toggle_prdata_23 [prdata[19] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  29] covered     (depth=2)                   -  apb_ram.toggle_prdata_24 [prdata[1] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  30] covered     (depth=3)                   -  apb_ram.toggle_prdata_25 [prdata[1] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  31] covered     (depth=2)                   -  apb_ram.toggle_prdata_26 [prdata[20] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  32] covered     (depth=3)                   -  apb_ram.toggle_prdata_27 [prdata[20] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  33] covered     (depth=2)                   -  apb_ram.toggle_prdata_28 [prdata[21] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  34] covered     (depth=3)                   -  apb_ram.toggle_prdata_29 [prdata[21] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  35] covered     (depth=3)                   -  apb_ram.toggle_prdata_3 [prdata[0] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  36] covered     (depth=2)                   -  apb_ram.toggle_prdata_30 [prdata[22] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  37] covered     (depth=3)                   -  apb_ram.toggle_prdata_31 [prdata[22] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  38] covered     (depth=2)                   -  apb_ram.toggle_prdata_32 [prdata[23] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  39] covered     (depth=3)                   -  apb_ram.toggle_prdata_33 [prdata[23] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  40] covered     (depth=2)                   -  apb_ram.toggle_prdata_34 [prdata[24] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  41] covered     (depth=3)                   -  apb_ram.toggle_prdata_35 [prdata[24] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  42] covered     (depth=2)                   -  apb_ram.toggle_prdata_36 [prdata[25] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  43] covered     (depth=3)                   -  apb_ram.toggle_prdata_37 [prdata[25] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  44] covered     (depth=2)                   -  apb_ram.toggle_prdata_38 [prdata[26] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  45] covered     (depth=3)                   -  apb_ram.toggle_prdata_39 [prdata[26] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  46] covered     (depth=2)                   -  apb_ram.toggle_prdata_4 [prdata[10] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  47] covered     (depth=2)                   -  apb_ram.toggle_prdata_40 [prdata[27] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  48] covered     (depth=3)                   -  apb_ram.toggle_prdata_41 [prdata[27] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  49] covered     (depth=2)                   -  apb_ram.toggle_prdata_42 [prdata[28] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  50] covered     (depth=3)                   -  apb_ram.toggle_prdata_43 [prdata[28] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  51] covered     (depth=2)                   -  apb_ram.toggle_prdata_44 [prdata[29] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  52] covered     (depth=3)                   -  apb_ram.toggle_prdata_45 [prdata[29] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  53] covered     (depth=2)                   -  apb_ram.toggle_prdata_46 [prdata[2] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  54] covered     (depth=3)                   -  apb_ram.toggle_prdata_47 [prdata[2] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  55] covered     (depth=2)                   -  apb_ram.toggle_prdata_48 [prdata[30] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  56] covered     (depth=3)                   -  apb_ram.toggle_prdata_49 [prdata[30] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  57] covered     (depth=3)                   -  apb_ram.toggle_prdata_5 [prdata[10] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  58] covered     (depth=2)                   -  apb_ram.toggle_prdata_50 [prdata[31] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  59] covered     (depth=3)                   -  apb_ram.toggle_prdata_51 [prdata[31] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  60] covered     (depth=2)                   -  apb_ram.toggle_prdata_52 [prdata[3] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  61] covered     (depth=3)                   -  apb_ram.toggle_prdata_53 [prdata[3] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  62] covered     (depth=2)                   -  apb_ram.toggle_prdata_54 [prdata[4] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  63] covered     (depth=3)                   -  apb_ram.toggle_prdata_55 [prdata[4] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  64] covered     (depth=2)                   -  apb_ram.toggle_prdata_56 [prdata[5] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  65] covered     (depth=3)                   -  apb_ram.toggle_prdata_57 [prdata[5] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  66] covered     (depth=2)                   -  apb_ram.toggle_prdata_58 [prdata[6] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  67] covered     (depth=3)                   -  apb_ram.toggle_prdata_59 [prdata[6] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  68] covered     (depth=2)                   -  apb_ram.toggle_prdata_6 [prdata[11] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  69] covered     (depth=2)                   -  apb_ram.toggle_prdata_60 [prdata[7] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  70] covered     (depth=3)                   -  apb_ram.toggle_prdata_61 [prdata[7] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  71] covered     (depth=2)                   -  apb_ram.toggle_prdata_62 [prdata[8] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  72] covered     (depth=3)                   -  apb_ram.toggle_prdata_63 [prdata[8] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  73] covered     (depth=2)                   -  apb_ram.toggle_prdata_64 [prdata[9] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  74] covered     (depth=3)                   -  apb_ram.toggle_prdata_65 [prdata[9] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  75] covered     (depth=3)                   -  apb_ram.toggle_prdata_7 [prdata[11] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  76] covered     (depth=2)                   -  apb_ram.toggle_prdata_8 [prdata[12] 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  77] covered     (depth=3)                   -  apb_ram.toggle_prdata_9 [prdata[12] 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:15)
+     [  78] uncoverable                             -  apb_ram.toggle_pready_66 [pready 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:16)
+     [  79] uncoverable                             -  apb_ram.toggle_pready_67 [pready 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:16)
+     [  80] covered     (depth=1)                   -  apb_ram.toggle_pslverr_68 [pslverr 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:17)
+     [  81] covered     (depth=2)                   -  apb_ram.toggle_pslverr_69 [pslverr 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:17)
+     [  82] covered     (depth=0)                   -  apb_ram.toggle_valid_addr_70 [valid_addr 0->1] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:29)
+     [  83] covered     (depth=0)                   -  apb_ram.toggle_valid_addr_71 [valid_addr 1->0] (/u/moulya/LEARNINGS/APB_v2_imp/RTL/apb_design.sv:29)
+
+
+action aaMonetSelectProperties -data apb_ram.pslverr -trigger
+[Warning] CLEANUP_ON_EXIT_DISABLED: Disk not cleaned up because either fml_auto_save is true or check_fv -traceLevel 1 is used or fml_cleanup_on_exit is false
+=======================================================
+Total Time(S)  :370.80
+CPU Time(S)    :10.16
+Peak Memory(MB):1745
+========================Formal=========================
+Engine Wall Time(S)    :8.86
+Engine Peak Memory(MB) :143
+=======================================================
